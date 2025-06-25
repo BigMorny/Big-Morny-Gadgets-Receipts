@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Morny Gadgets</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="receipt-container">
+        <header class="receipt-header">
+            <div class="logo-section">
+                <img src="images/Big Morny Gadgets.png black.png" alt="Big Morny Gadgets Logo" class="your-actual-logo" width="250" title="Big Morny Gadgets">
+                </div>
+            <h2>Official Receipt</h2>
+        </header>
+
+        <section class="receipt-details-section">
+            <div class="input-group">
+                <label for="receiptNumber">Receipt Number:</label>
+                <input type="text" id="receiptNumber" readonly>
+            </div>
+            <div class="input-group">
+                <label for="receiptDate">Date:</label>
+                <input type="text" id="receiptDate" placeholder="DD Month,YYYY" required>
+            </div>
+        </section>
+
+        <div class="main-receipt-content-columns">
+            <section class="customer-info-section form-section">
+                <h3>Customer Information</h3>
+                <div class="input-group">
+                    <label for="customerName">Customer Name:</label>
+                    <input type="text" id="customerName" placeholder="Enter customer name" required>
+                </div>
+                <div class="input-group">
+                    <label for="customerPhone">Phone Number:</label>
+                    <input type="tel" id="customerPhone" placeholder="e.g., 024XXXXXXX">
+                </div>
+            </section>
+
+            <section class="device-info-section form-section">
+                <h3>Device Information</h3>
+                <div class="input-group">
+                    <label for="deviceType">Device Type:</label>
+                    <select id="deviceType" required>
+                        <option value="">-- Select Device Type --</option>
+                        <option value="phone">Phone</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="watch">Watch</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div id="phoneSpecificFields" class="conditional-fields">
+                    <div class="input-group">
+                        <label for="phoneBrand">Phone Brand:</label>
+                        <select id="phoneBrand">
+                            <option value="">-- Select Brand --</option>
+                            <option value="apple">Apple</option>
+                            <option value="samsung">Samsung</option>
+                            <option value="xiaomi">Xiaomi</option>
+                            <option value="huawei">Huawei</option>
+                            <option value="tecno">Tecno</option>
+                            <option value="infinix">Infinix</option>
+                            <option value="nokia">Nokia</option>
+                            <option value="oppo">Oppo</option>
+                            <option value="vivo">Vivo</option>
+                            <option value="google">Google Pixel</option>
+                            <option value="other_phone">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="phoneModel">Model:</label>
+                        <input type="text" id="phoneModel" placeholder="e.g., iPhone 15 Pro Max, Galaxy S24 Ultra">
+                    </div>
+                    <div class="input-group">
+                        <label for="phoneStorage">Storage:</label>
+                        <input type="text" id="phoneStorage" placeholder="e.g., 128GB, 256GB">
+                    </div>
+                    <div class="input-group">
+                        <label for="phoneColor">Color:</label>
+                        <input type="text" id="phoneColor" placeholder="e.g., Black, Blue">
+                    </div>
+                </div>
+
+                <div id="otherDeviceTypeField" class="conditional-fields">
+                    <div class="input-group">
+                        <label for="specificDeviceType">Specify Device Type:</label>
+                        <input type="text" id="specificDeviceType" placeholder="e.g., Drone, Smart Speaker">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="deviceCondition">Condition:</label>
+                    <select id="deviceCondition">
+                        <option value="new">New</option>
+                        <option value="used">Used</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="deviceIMEI">IMEI / Serial Number:</label>
+                    <input type="text" id="deviceIMEI" placeholder="Enter IMEI or Serial Number" required>
+                </div>
+                <div class="input-group">
+                    <label for="deviceAccessories">Accessories Included:</label>
+                    <textarea id="deviceAccessories" rows="2" placeholder="e.g., Charger, Earpods, Case"></textarea>
+                </div>
+            </section>
+        </div> <section class="payment-details-section form-section">
+            <h3>Payment Details</h3>
+            <div class="input-group">
+                <label for="paymentMethod">Payment Method:</label>
+                <select id="paymentMethod" required>
+                    <option value="">-- Select Payment Method --</option>
+                    <option value="mobileMoney">Mobile Money</option>
+                    <option value="cardPayment">Card Payment</option>
+                    <option value="bankTransfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <div id="mobileMoneyFields" class="payment-method-fields">
+                <div class="input-group">
+                    <label for="momoNetwork">Mobile Money Network:</label>
+                    <select id="momoNetwork">
+                        <option value="">-- Select Network --</option>
+                        <option value="mtn">MTN Mobile Money</option>
+                        <option value="telecel">Telecel Cash</option>
+                        <option value="at">AT Money</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="cardPaymentFields" class="payment-method-fields">
+                <div class="input-group">
+                    <label for="cardType">Card Type:</label>
+                    <select id="cardType">
+                        <option value="">-- Select Card Type --</option>
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                        <option value="ghanaPay">GhanaPay</option>
+                        <option value="otherCard">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="cardLast4">Last 4 Digits of Card:</label>
+                    <input type="text" id="cardLast4" maxlength="4" placeholder="XXXX">
+                </div>
+                <div class="input-group">
+                    <label for="cardAuthCode">Authorization Code:</label>
+                    <input type="text" id="cardAuthCode" placeholder="From POS machine">
+                </div>
+            </div>
+
+            <div id="bankTransferFields" class="payment-method-fields">
+                <div class="input-group">
+                    <label for="bankName">Bank Name:</label>
+                    <select id="bankName">
+                        <option value="">-- Select Bank --</option>
+                        <option value="ecobank">Ecobank Ghana</option>
+                        <option value="calbank">CalBank</option>
+                        <option value="gcb">GCB Bank</option>
+                        <option value="stanbic">Stanbic Bank Ghana</option>
+                        <option value="stanchart">Standard Chartered Bank Ghana</option>
+                        <option value="absa">Absa Bank Ghana</option>
+                        <option value="access">Access Bank Ghana</option>
+                        <option value="zenith">Zenith Bank Ghana</option>
+                        <option value="fidelity">Fidelity Bank Ghana</option>
+                        <option value="gtbank">GTBank Ghana</option>
+                        <option value="umb">Universal Merchant Bank (UMB)</option>
+                        <option value="cbg">Consolidated Bank Ghana (CBG)</option>
+                        <option value="societeGenerale">Société Générale Ghana</option>
+                        <option value="uba">United Bank for Africa (UBA) Ghana</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="bankTransferRef">Transaction Reference:</label>
+                    <input type="text" id="bankTransferRef" placeholder="Reference from bank transfer">
+                </div>
+            </div>
+
+            <div class="amount-group">
+                <div class="input-group">
+                    <label for="devicePrice">Device Price (GHS):</label>
+                    <input type="number" id="devicePrice" min="0" step="0.01" value="0.00" required>
+                </div>
+                <div class="input-group">
+                    <label for="accessoriesPrice">Accessories Price (GHS, Optional):</label>
+                    <input type="number" id="accessoriesPrice" min="0" step="0.01" value="0.00">
+                </div>
+                <div class="input-group total-amount-display">
+                    <label>Total Amount Paid (GHS):</label>
+                    <span class="currency-display">GHS <span id="totalAmountDisplay">0.00</span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="signatures-section form-section">
+            <h3>Acknowledgment</h3>
+            <div class="acknowledgement-text-only">
+                <p>Sold by: <strong>Big Morny Gadgets</strong></p>
+            </div>
+        </section>
+
+        <div class="receipt-actions">
+            <button id="generateReceiptBtn" class="btn">Generate & Print Receipt</button>
+            <button id="resetFormBtn" class="btn secondary">Reset Form</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
