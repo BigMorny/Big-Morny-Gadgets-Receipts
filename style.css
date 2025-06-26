@@ -70,6 +70,16 @@ body {
     padding-bottom: 10px;
 }
 
+/* Specific styling for h4 within form sections (for trade-in sub-heading) */
+.form-section h4 {
+    font-size: 1.2em; /* Smaller than h3 */
+    color: #007bff;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 5px;
+}
+
+
 .input-group {
     margin-bottom: 18px;
     display: flex;
@@ -178,29 +188,6 @@ body {
     border: 1px solid #cce5ff;
 }
 
-/* Terms and Conditions */
-.terms-list {
-    list-style-type: none; /* Removed disc for cleaner look */
-    padding-left: 0; /* Align left */
-    color: #666;
-    line-height: 1.6;
-}
-
-.terms-list li {
-    margin-bottom: 5px;
-    text-indent: -1.2em; /* Indent for bullet, but still align text left */
-    padding-left: 1.2em; /* Compensate for text-indent */
-}
-
-.terms-list li:before {
-    content: "• "; /* Custom bullet */
-    color: #007bff; /* Color the bullet */
-    font-weight: bold;
-    display: inline-block;
-    width: 1.2em; /* Space for bullet */
-    margin-left: -1.2em; /* Pull bullet left */
-}
-
 /* Buttons */
 .receipt-actions {
     display: flex;
@@ -285,6 +272,13 @@ body {
         padding-bottom: 3px; /* Reduced padding */
         border-bottom: 1px dashed #ccc;
     }
+    .form-section h4 { /* Style for new trade-in sub-heading in print */
+        font-size: 0.95em;
+        margin-bottom: 3px;
+        padding-bottom: 2px;
+        border-bottom: 1px dashed #ddd;
+    }
+
 
     /* === New Column Layout for Customer & Device Info === */
     .main-receipt-content-columns {
@@ -298,11 +292,9 @@ body {
     .main-receipt-content-columns .form-section {
         width: calc(50% - 4mm); /* Half width minus half the gap */
         box-sizing: border-box;
-        /* --- REMOVED BORDERS, BACKGROUND, AND PADDING FOR PRINTED COLUMNS --- */
         padding: 0; /* Remove internal padding */
         border: none; /* Remove border */
         background-color: transparent; /* Remove background color */
-        /* --- END REMOVAL --- */
     }
     /* =================================================== */
 
@@ -371,12 +363,15 @@ body {
         border-color: #ccc;
         outline: none;
     }
+
+    /* Hide inactive conditional fields completely in print */
     .conditional-fields:not(.active), .payment-method-fields:not(.active) {
-        display: none !important; /* Hide inactive fields completely */
+        display: none !important;
     }
+    /* Ensure active conditional fields don't add extra space */
     .conditional-fields.active, .payment-method-fields.active {
         padding: 0;
-        margin-top: 3px; /* Reduced margin */
+        margin-top: 3px;
         border: none;
         background-color: transparent;
     }
@@ -424,20 +419,6 @@ body {
         padding: 6px;
         font-size: 0.85em;
     }
-    .terms-list {
-        font-size: 0.8em; /* Slightly larger for terms */
-        line-height: 1.4; /* Tighter line height */
-        padding-left: 0;
-    }
-    .terms-list li {
-        margin-bottom: 1px; /* Minimal margin */
-        text-indent: -1.2em;
-        padding-left: 1.2em;
-    }
-    .terms-list li:before {
-        content: "• ";
-        color: #000; /* Black bullet for print */
-    }
 
     /* Adjust header for print */
     .receipt-header {
@@ -453,5 +434,11 @@ body {
         height: auto;
         display: block;
         margin: 0 auto;
+    }
+    /* Style for the hr line break in print */
+    hr {
+        border: 0;
+        border-top: 1px dashed #eee;
+        margin: 8px 0;
     }
 }
