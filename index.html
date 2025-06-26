@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Morny Gadgets</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
     <div class="receipt-container">
         <header class="receipt-header">
             <div class="logo-section">
-                <img src="images/Big Morny Gadgets.png black.png" alt="Big Morny Gadgets Logo" class="your-actual-logo" width="250" title="Big Morny Gadgets">
-                </div>
+                <img src="images/Big_Morny_Gadgets.png" alt="Big Morny Gadgets Logo" class="your-actual-logo" width="250" title="Big Morny Gadgets">
+            </div>
             <h2>Official Receipt</h2>
         </header>
 
@@ -39,75 +39,114 @@
                 </div>
             </section>
 
-            <section class="device-info-section form-section">
-                <h3>Device Information</h3>
+            <section class="transaction-type-selection-section form-section">
+                <h3>Transaction Type</h3>
                 <div class="input-group">
-                    <label for="deviceType">Device Type:</label>
-                    <select id="deviceType" required>
-                        <option value="">-- Select Device Type --</option>
-                        <option value="phone">Phone</option>
-                        <option value="laptop">Laptop</option>
-                        <option value="watch">Watch</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <div style="display: flex; gap: 20px; align-items: center;">
+                        <span style="display: flex; align-items: center;">
+                            <input type="radio" id="directBuy" name="transactionType" value="directBuy" style="margin-right: 5px;">
+                            <label for="directBuy" style="margin-bottom: 0; font-weight: normal;">Direct Buy</label>
+                        </span>
+                        <span style="display: flex; align-items: center;">
+                            <input type="radio" id="swapTradeIn" name="transactionType" value="swapTradeIn" style="margin-right: 5px;">
+                            <label for="swapTradeIn" style="margin-bottom: 0; font-weight: normal;">Swap (Trade-in)</label>
+                        </span>
+                    </div>
                 </div>
-
-                <div id="phoneSpecificFields" class="conditional-fields">
+            </section>
+        </div> <div id="conditionalDeviceDetailsWrapper" class="conditional-fields">
+            <div class="main-receipt-content-columns">
+                <section id="newDeviceInformationSection" class="device-info-section form-section">
+                    <h3>New Device Information</h3>
                     <div class="input-group">
-                        <label for="phoneBrand">Phone Brand:</label>
-                        <select id="phoneBrand">
-                            <option value="">-- Select Brand --</option>
-                            <option value="apple">Apple</option>
-                            <option value="samsung">Samsung</option>
-                            <option value="xiaomi">Xiaomi</option>
-                            <option value="huawei">Huawei</option>
-                            <option value="tecno">Tecno</option>
-                            <option value="infinix">Infinix</option>
-                            <option value="nokia">Nokia</option>
-                            <option value="oppo">Oppo</option>
-                            <option value="vivo">Vivo</option>
-                            <option value="google">Google Pixel</option>
-                            <option value="other_phone">Other</option>
+                        <label for="deviceType">Device Type:</label>
+                        <select id="deviceType" required>
+                            <option value="">-- Select Device Type --</option>
+                            <option value="phone">Phone</option>
+                            <option value="laptop">Laptop</option>
+                            <option value="watch">Watch</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div id="phoneSpecificFields" class="conditional-fields">
+                        <div class="input-group">
+                            <label for="phoneBrand">Phone Brand:</label>
+                            <select id="phoneBrand">
+                                <option value="">-- Select Brand --</option>
+                                <option value="apple">Apple</option>
+                                <option value="samsung">Samsung</option>
+                                <option value="xiaomi">Xiaomi</option>
+                                <option value="huawei">Huawei</option>
+                                <option value="tecno">Tecno</option>
+                                <option value="infinix">Infinix</option>
+                                <option value="nokia">Nokia</option>
+                                <option value="oppo">Oppo</option>
+                                <option value="vivo">Vivo</option>
+                                <option value="google">Google Pixel</option>
+                                <option value="other_phone">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="phoneModel">Model:</label>
+                            <input type="text" id="phoneModel" placeholder="e.g., iPhone 15 Pro Max, Galaxy S24 Ultra">
+                        </div>
+                        <div class="input-group">
+                            <label for="phoneStorage">Storage:</label>
+                            <input type="text" id="phoneStorage" placeholder="e.g., 128GB, 256GB">
+                        </div>
+                        <div class="input-group">
+                            <label for="phoneColor">Color:</label>
+                            <input type="text" id="phoneColor" placeholder="e.g., Black, Blue">
+                        </div>
+                    </div>
+
+                    <div id="otherDeviceTypeField" class="conditional-fields">
+                        <div class="input-group">
+                            <label for="specificDeviceType">Specify Device Type:</label>
+                            <input type="text" id="specificDeviceType" placeholder="e.g., Drone, Smart Speaker">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="deviceCondition">Condition:</label>
+                        <select id="deviceCondition">
+                            <option value="new">New</option>
+                            <option value="used">Used</option>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label for="phoneModel">Model:</label>
-                        <input type="text" id="phoneModel" placeholder="e.g., iPhone 15 Pro Max, Galaxy S24 Ultra">
+                        <label for="deviceIMEI">IMEI / Serial Number:</label>
+                        <input type="text" id="deviceIMEI" placeholder="Enter IMEI or Serial Number" required>
                     </div>
                     <div class="input-group">
-                        <label for="phoneStorage">Storage:</label>
-                        <input type="text" id="phoneStorage" placeholder="e.g., 128GB, 256GB">
+                        <label for="deviceAccessories">Accessories Included:</label>
+                        <textarea id="deviceAccessories" rows="2" placeholder="e.g., Charger, Earpods, Case"></textarea>
                     </div>
-                    <div class="input-group">
-                        <label for="phoneColor">Color:</label>
-                        <input type="text" id="phoneColor" placeholder="e.g., Black, Blue">
-                    </div>
-                </div>
 
-                <div id="otherDeviceTypeField" class="conditional-fields">
+                    <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #eee;">
                     <div class="input-group">
-                        <label for="specificDeviceType">Specify Device Type:</label>
-                        <input type="text" id="specificDeviceType" placeholder="e.g., Drone, Smart Speaker">
+                        <label for="devicePrice">New Device Price (GHS):</label>
+                        <input type="number" id="devicePrice" min="0" step="0.01" value="0.00" required>
                     </div>
-                </div>
+                    <div class="input-group">
+                        <label for="accessoriesPrice">Accessories Price (GHS, Optional):</label>
+                        <input type="number" id="accessoriesPrice" min="0" step="0.01" value="0.00">
+                    </div>
+                </section>
 
-                <div class="input-group">
-                    <label for="deviceCondition">Condition:</label>
-                    <select id="deviceCondition">
-                        <option value="new">New</option>
-                        <option value="used">Used</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="deviceIMEI">IMEI / Serial Number:</label>
-                    <input type="text" id="deviceIMEI" placeholder="Enter IMEI or Serial Number" required>
-                </div>
-                <div class="input-group">
-                    <label for="deviceAccessories">Accessories Included:</label>
-                    <textarea id="deviceAccessories" rows="2" placeholder="e.g., Charger, Earpods, Case"></textarea>
-                </div>
-            </section>
-        </div> <section class="payment-details-section form-section">
+                <section id="tradeInDetailsForSwap" class="form-section conditional-fields">
+                    <h3>Old Device Trade-in Details</h3>
+                    <div class="input-group">
+                        <label for="oldPhoneName">Phone Name:</label>
+                        <input type="text" id="oldPhoneName" placeholder="e.g., iPhone 11 Pro Max">
+                    </div>
+                    <div class="input-group">
+                        <label for="oldPhoneStorage">Storage:</label>
+                        <input type="text" id="oldPhoneStorage" placeholder="e.g., 256GB">
+                    </div>
+                </section>
+            </div> </div> <section class="payment-details-section form-section">
             <h3>Payment Details</h3>
             <div class="input-group">
                 <label for="paymentMethod">Payment Method:</label>
@@ -179,15 +218,9 @@
                 </div>
             </div>
 
+            <hr style="margin: 20px 0; border: 0; border-top: 1px dashed #eee;">
+
             <div class="amount-group">
-                <div class="input-group">
-                    <label for="devicePrice">Device Price (GHS):</label>
-                    <input type="number" id="devicePrice" min="0" step="0.01" value="0.00" required>
-                </div>
-                <div class="input-group">
-                    <label for="accessoriesPrice">Accessories Price (GHS, Optional):</label>
-                    <input type="number" id="accessoriesPrice" min="0" step="0.01" value="0.00">
-                </div>
                 <div class="input-group total-amount-display">
                     <label>Total Amount Paid (GHS):</label>
                     <span class="currency-display">GHS <span id="totalAmountDisplay">0.00</span></span>
